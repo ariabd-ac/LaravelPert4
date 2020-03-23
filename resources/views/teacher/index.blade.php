@@ -1,5 +1,5 @@
 @extends('teacher._parsial._master')
-
+@section('title', 'Data Guru')
 @section('content')
     
 <div class="page-wrapper">
@@ -138,6 +138,7 @@
 
                             </div>
 
+                        
                         </div>
 
                     </div>

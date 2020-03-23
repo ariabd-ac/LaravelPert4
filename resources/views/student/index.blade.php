@@ -1,8 +1,6 @@
 @extends('teacher._parsial._master')
 
-@section('title', 'Tambah Data Guru')
 @section('content')
-
     
 <div class="page-wrapper">
     
@@ -17,7 +15,8 @@
 
                 <div class="col-md-5 align-self-center">
 
-                    <h3 class="text-themecolor">Guru</h3>
+                    <h3 class="text-themecolor">Siswa</h3>
+                  
 
                 </div>
 
@@ -49,15 +48,7 @@
                 <!-- Start Page Content -->
 
                 <!-- ============================================================== -->
-                @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 
                 <div class="row">
 
@@ -67,94 +58,76 @@
 
                             <div class="card-body">
 
-                                <h4 class="card-title">Input Guru</h4>
+                                <h4 class="card-title">Data Siswa</h4>
 
-                                <form method="POST" action="{{ route('teacher.store') }}">
-                                    @csrf
-                                    <div class="form-row">
+                                <div class="table-responsive">
 
-                                        <div class="col-md-4 mb-3">
+                                    <table class="table table-striped">
 
-                                          <label for="validationDefault01">Nama </label>
+                                        
 
-                                          <input type="text" class="form-control" id="validationDefault01" name="nama" placeholder="Memet Laksono" value="{{ old('nama') }}" required="">
+                                            <thead>
 
-                                        </div>
+                                                <tr>
 
-                                        <div class="col-md-4 mb-3">
+                                                    <th>Nama</th>
 
-                                          <label for="validationDefault02">Nomer Induk Guru</label>
+                                                    <th>NIS</th>
 
-                                          <input type="text" class="form-control" id="validationDefault02" placeholder="12345  " value=""{{ old('nig') }}" required="" name="nig">
+                                                    <th>Jenis Kelamin</th>
 
-                                        </div>
+                                                    <th>Kelas</th>
 
-                                        <div class="col-md-4 mb-3">
+                                                    <th>Alamat</th>
 
-                                          <label for="validationDefaultUsername">Tempat Tanggal Lahir</label>
+                                                    <th>Nama Ibu</th>
 
-                                         <input type="text" class="form-control" id="validationDefault02" placeholder="Jakarta, 24 Juni 1972" value="{{ old('ttl') }}" required="" name="ttl">
+                                                    <th>Nama Ayah</th>
 
-                                        </div>
+                                                    <th class="text-nowrap">Action</th>
 
-                                    </div>
+                                                </tr>
 
-                                    <div class="form-row">
+                                            </thead>
 
-                                        <div class="col-md-3 mb-3">
+                                                {{-- @foreach ($teachers as $teacher) --}}
+                                                    
+                                                
+                                                    <tbody>
 
-                                          <label for="validationDefault03">No Telephone</label>
+                                                        <tr>
+                                                                <td>Andi</td>
+                                                                <td>1234</td>
+                                                                <td>Laki-Laki</td>
+                                                                <td>10 IPA 1</td>
+                                                                <td>Bandung</td>
+                                                                <td>Suratmi</td>
+                                                                <td>Ratmo</td>
 
-                                          <input type="text" class="form-control" id="validationDefault03" placeholder="0832783438" required="" name="no_tlp" value="{{ old('no_tlp') }}">
+                                                            <td class="text-nowrap">
 
-                                        </div>
+                                                                <form action="" method="post">
+                                                                <a href="" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                                                @csrf
+                                                                {{-- <a href="#" data-toggle="tooltip" data-original-title="Delete"> <i class="fa fa-close text-danger"></i> </a> --}}
+                                                                {{-- <button class="btn btn-danger btn-sm" type="submit">Delete</button> --}}
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" value="" name="name">
+                                                                <input class="btn btn-xs btn-info" type="submit" value="Hapus" onclick="return confirm('Are you sure?')">
+                                                                {{-- <a href="#" data-toggle="tooltip" data-original-title="Delete" type="submit" value="Hapus" onclick="return confirm('Are you sure?')"> <i class="fa fa-close text-danger"></i> </a> --}}
+                                                                
+                                                                <a href="" data-toggle="tooltip" data-original-title="Detail"> <i class="fa fa-drivers-license"></i> </a>
+                                                            </form>
 
-                                        <div class="col-md-3 mb-3">
 
-                                          <label for="validationDefault03">Jabatan</label>
+                                                            </td>
 
-                                          <input type="text" class="form-control" id="validationDefault03" placeholder="Humas" required="" name="jabatan" value="{{ old('jabatan') }}">
+                                                        </tr>
 
-                                        </div>
-
-                                        <div class="col-md-3 mb-3">
-
-                                          <label for="validationDefault04">Mata Pelajaran</label>
-
-                                          <input type="text" class="form-control" id="validationDefault04" placeholder="Agama" required="" name="mp" value="{{ old('mp') }}">
-
-                                        </div>
-
-                                        <div class="col-md-3 mb-3">
-
-                                          <label for="validationDefault05">Status Guru</label>
-
-                                          <input type="text" class="form-control" id="validationDefault05" placeholder="Honorer" required="" name="status" value="{{ old('status') }}">
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group">
-
-                                        <div class="form-check">
-
-                                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required="">
-
-                                          <label class="form-check-label" for="invalidCheck2">
-
-                                            Mengisi data dengan benar?
-
-                                          </label>
-
-                                        </div>
-
-                                    </div>
-
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
-                                    
-                                    <a href="{{ route('teacher.index') }}" class="btn btn-info">Cancle</a>
-                                </form>
+                                                    {{-- @endforeach --}}
+                                                </tbody>
+                                            
+                                    </table>
 
                                 </div>
 

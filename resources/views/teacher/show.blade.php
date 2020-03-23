@@ -1,5 +1,5 @@
 @extends('teacher._parsial._master')
-
+@section('title', 'Detail Data Guru')
 @section('content')
     
 <div class="page-wrapper">

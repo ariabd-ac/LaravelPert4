@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('teacher', 'TeachersController');
+Route::resource('student', 'StudentsController');

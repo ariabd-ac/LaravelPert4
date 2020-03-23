@@ -31,9 +31,7 @@
 
     <!-- Custom CSS -->
 
-    <link href="{{asset('plugins/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
-
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
 
     <!-- You can change the theme colors from here -->
 
@@ -256,7 +254,6 @@
 
                             <ul aria-expanded="false" class="collapse">
 
-                                <li><a href="{{ route('teacher.index')}}">Data Guru </a></li>
                                 <li><a href="{{ route('teacher.create')}}">Input </a></li>
 
                             </ul>
@@ -269,8 +266,7 @@
 
                             <ul aria-expanded="false" class="collapse">
 
-                                <li><a href="{{ route('student.index')}}">Data Siswa </a></li>
-                                <li><a href="{{ route('student.create')}}">Input </a></li>
+                                <li><a href="{{ route('teacher.create')}}">Input </a></li>
 
                             </ul>
 
@@ -355,9 +351,6 @@
     <script src="{{asset('js/custom.min.js')}}"></script>
 
     <!-- ============================================================== -->
-    <script src="{{asset('plugins/sweetalert/sweetalert.min.js')}}"></script>
-
-    <script src="{{asset('plugins/sweetalert/jquery.sweet-alert.custom.js')}}"></script>
 
     <!-- Style switcher -->
 
